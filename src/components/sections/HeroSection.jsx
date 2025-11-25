@@ -79,7 +79,7 @@ const HeroSection = ({
         );
 
         setTimeout(() => {
-          titleEl.textContent = HERO_TITLES[i];
+          titleEl.textContent = HERO_TITLES[i] || "";
           gsap.fromTo(
             titleEl,
             { rotate: 90, opacity: 0 },
@@ -144,7 +144,7 @@ const HeroSection = ({
             {/* left side me image + animated title hai */}
             <div className="relative flex items-center justify-center">
               {/* yaha title rotate animation hota */}
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-64 z-999">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-64 z-[999]">
                 <h1
                   ref={titleRef}
                   className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl 
@@ -170,12 +170,16 @@ const HeroSection = ({
                   {/* current image */}
                   <img
                     ref={imgCurrentRef}
+                    src=""
+                    alt=""
                     className="absolute inset-0 w-full h-full object-cover rounded-full"
                   />
 
                   {/* next image fade-in wala */}
                   <img
                     ref={imgNextRef}
+                    src=""
+                    alt=""
                     className="absolute inset-0 w-full h-full object-cover rounded-full opacity-0"
                   />
 
